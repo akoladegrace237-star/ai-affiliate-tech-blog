@@ -6,8 +6,23 @@
 
 ---
 
+## 🌐 Live Site (GitHub Pages)
+
+**No setup needed — view the site directly in your browser:**
+
+| Page | URL |
+|---|---|
+| 🏠 Homepage | https://akoladegrace237-star.github.io/ai-affiliate-tech-blog/ |
+| ℹ️ About | https://akoladegrace237-star.github.io/ai-affiliate-tech-blog/about.html |
+| 📝 Reviews | https://akoladegrace237-star.github.io/ai-affiliate-tech-blog/blog/sample-review.html |
+
+> **One-time setup:** Go to **Settings → Pages** in this repository, set Source to **Deploy from a branch**, choose branch `copilot/setup-ai-affiliate-tech-blog` (or `main` after merging), folder `/docs`, and click **Save**. The site goes live in ~1 minute.
+
+---
+
 ## 📋 Table of Contents
 
+- [Live Site](#-live-site-github-pages)
 - [What is this?](#what-is-this)
 - [Features](#features)
 - [Tech Stack](#tech-stack)

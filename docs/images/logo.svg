@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Icon: circuit/AI brain -->
+  <circle cx="28" cy="30" r="20" fill="url(#logoGrad)" />
+  <text x="28" y="36" text-anchor="middle" font-size="18" fill="white" font-family="Arial, sans-serif" font-weight="bold">AI</text>
+  <!-- Site name -->
+  <text x="58" y="22" font-size="14" fill="#6366f1" font-family="Arial, sans-serif" font-weight="bold">TECH</text>
+  <text x="58" y="40" font-size="14" fill="#a855f7" font-family="Arial, sans-serif" font-weight="bold">REVIEWS</text>
+</svg>
