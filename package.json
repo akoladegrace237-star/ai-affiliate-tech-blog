@@ -1,0 +1,31 @@
+{
+  "name": "ai-affiliate-tech-blog",
+  "version": "1.0.0",
+  "description": "AI-powered affiliate marketing blog for Tech & Gadgets niche",
+  "main": "index.js",
+  "scripts": {
+    "generate:review": "node ai/generate-review.js",
+    "generate:comparison": "node ai/generate-comparison.js",
+    "generate:keywords": "node ai/generate-seo-keywords.js",
+    "generate:sitemap": "node seo/sitemap-generator.js",
+    "affiliate:links": "node affiliate/link-manager.js"
+  },
+  "keywords": [
+    "affiliate-marketing",
+    "ai",
+    "blog",
+    "tech",
+    "gadgets",
+    "openai",
+    "seo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^4.52.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

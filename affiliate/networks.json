@@ -1,0 +1,35 @@
+{
+  "amazon": {
+    "name": "Amazon Associates",
+    "baseUrl": "https://www.amazon.com/dp/",
+    "affiliateTag": "YOUR-AFFILIATE-TAG",
+    "commission": "1-10%",
+    "signupUrl": "https://affiliate-program.amazon.com/",
+    "notes": "Best for most tech products. Commission varies by category (electronics ~2.5-4%)"
+  },
+  "shareasale": {
+    "name": "ShareASale",
+    "baseUrl": "https://www.shareasale.com/",
+    "merchantId": "YOUR-MERCHANT-ID",
+    "affiliateId": "YOUR-AFFILIATE-ID",
+    "commission": "Varies (5-30%)",
+    "signupUrl": "https://www.shareasale.com/",
+    "notes": "Great for software, accessories, and niche tech brands"
+  },
+  "impact": {
+    "name": "Impact",
+    "baseUrl": "https://app.impact.com/",
+    "accountSid": "YOUR-ACCOUNT-SID",
+    "commission": "Varies",
+    "signupUrl": "https://impact.com/",
+    "notes": "Premium brand partnerships — Samsung, Lenovo, Best Buy, etc."
+  },
+  "cj": {
+    "name": "CJ Affiliate (Commission Junction)",
+    "baseUrl": "https://www.cj.com/",
+    "websiteId": "YOUR-WEBSITE-ID",
+    "commission": "Varies",
+    "signupUrl": "https://www.cj.com/",
+    "notes": "Large network with many electronics retailers"
+  }
+}
