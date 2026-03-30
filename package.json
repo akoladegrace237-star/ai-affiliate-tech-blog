@@ -4,6 +4,7 @@
   "description": "AI-powered affiliate marketing blog for Tech & Gadgets niche",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "generate:review": "node ai/generate-review.js",
     "generate:comparison": "node ai/generate-comparison.js",
     "generate:keywords": "node ai/generate-seo-keywords.js",

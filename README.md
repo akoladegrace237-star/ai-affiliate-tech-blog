@@ -73,13 +73,35 @@ npm install
 # 3. Configure environment variables
 cp .env.example .env
 # Edit .env and add your API keys
-
-# 4. Generate your first product review
-node ai/generate-review.js --product "Sony WH-1000XM5" --category "headphones"
-
-# 5. Open the landing page
-open src/pages/index.html
 ```
+
+---
+
+## 👀 Preview the Website Locally (Before Hosting)
+
+**You can see the full website on your computer before publishing it online — no hosting needed!**
+
+```bash
+npm start
+```
+
+That's it. Your browser will open automatically to **http://localhost:3000** and you'll see the live site.
+
+| Page | URL |
+|---|---|
+| 🏠 Homepage | http://localhost:3000/src/pages/index.html |
+| ℹ️ About | http://localhost:3000/src/pages/about.html |
+| 📝 Sample Review | http://localhost:3000/src/pages/blog/sample-review.html |
+
+> **Press `Ctrl + C`** in your terminal to stop the preview server when you're done.
+
+You can also use a custom port if 3000 is already taken:
+
+```bash
+PORT=8080 npm start
+```
+
+---
 
 ### Environment Setup
 
