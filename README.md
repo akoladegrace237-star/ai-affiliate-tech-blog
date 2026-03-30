@@ -87,11 +87,13 @@ npm start
 
 That's it. Your browser will open automatically to **http://localhost:3000** and you'll see the live site.
 
-| Page | URL |
+You can visit any page using short, easy-to-type URLs:
+
+| Page | Short URL | 
 |---|---|
-| 🏠 Homepage | http://localhost:3000/src/pages/index.html |
-| ℹ️ About | http://localhost:3000/src/pages/about.html |
-| 📝 Sample Review | http://localhost:3000/src/pages/blog/sample-review.html |
+| 🏠 Homepage | http://localhost:3000/ |
+| ℹ️ About | http://localhost:3000/about |
+| 📝 Reviews | http://localhost:3000/blog |
 
 > **Press `Ctrl + C`** in your terminal to stop the preview server when you're done.
 

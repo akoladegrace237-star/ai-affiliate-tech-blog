@@ -42,18 +42,40 @@ const MIME_TYPES = {
 };
 
 // -----------------------------------------------------------------------
+// Clean URL routing
+// Maps short/friendly URLs to the actual HTML file paths under src/pages/
+// -----------------------------------------------------------------------
+const ROUTES = {
+  '/':                         '/src/pages/index.html',
+  '/index':                    '/src/pages/index.html',
+  '/index.html':               '/src/pages/index.html',
+  '/about':                    '/src/pages/about.html',
+  '/about.html':               '/src/pages/about.html',
+  '/blog':                     '/src/pages/blog/sample-review.html',
+  '/reviews':                  '/src/pages/blog/sample-review.html',
+  '/blog/sample-review':       '/src/pages/blog/sample-review.html',
+  '/blog/sample-review.html':  '/src/pages/blog/sample-review.html',
+};
+
+// -----------------------------------------------------------------------
 // Request handler
 // -----------------------------------------------------------------------
 function requestHandler(req, res) {
-  // Redirect bare "/" to the homepage
-  if (req.url === '/' || req.url === '') {
-    res.writeHead(302, { Location: '/src/pages/index.html' });
-    res.end();
-    return;
-  }
-
-  // Strip query strings (e.g. ?v=123)
+  // Strip query strings (e.g. ?v=123) for route matching
   const urlPath = req.url.split('?')[0];
+
+  // Check clean URL routes first — redirect to the canonical file path
+  if (ROUTES[urlPath]) {
+    const target = ROUTES[urlPath];
+    // Serve inline if it IS already the canonical path, else redirect
+    if (urlPath === target) {
+      // fall through to file serving below
+    } else {
+      res.writeHead(302, { Location: target });
+      res.end();
+      return;
+    }
+  }
 
   // Resolve to an absolute file path, preventing directory traversal
   const filePath = path.normalize(path.join(ROOT, urlPath));
@@ -75,7 +97,7 @@ function requestHandler(req, res) {
 <body style="font-family:sans-serif;padding:2rem;">
   <h1>404 — Page Not Found</h1>
   <p>The file <code>${urlPath}</code> does not exist.</p>
-  <p><a href="/src/pages/index.html">← Back to Homepage</a></p>
+  <p><a href="/">← Back to Homepage</a></p>
 </body></html>`);
       } else {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -115,23 +137,23 @@ function openBrowser(url) {
 // -----------------------------------------------------------------------
 const server = http.createServer(requestHandler);
 
-server.listen(PORT, '127.0.0.1', function () {
-  const homeUrl = `http://localhost:${PORT}/src/pages/index.html`;
+server.listen(PORT, '0.0.0.0', function () {
+  const base = `http://localhost:${PORT}`;
 
   console.log('');
-  console.log('┌─────────────────────────────────────────────────┐');
-  console.log('│   🤖  AI Affiliate Tech Blog — Local Preview     │');
-  console.log('├─────────────────────────────────────────────────┤');
-  console.log(`│   🏠  Homepage:  ${homeUrl}  │`);
-  console.log(`│   ℹ️   About:     http://localhost:${PORT}/src/pages/about.html        │`);
-  console.log(`│   📝  Review:    http://localhost:${PORT}/src/pages/blog/sample-review.html │`);
-  console.log('│                                                   │');
-  console.log('│   Press Ctrl+C to stop the server.               │');
-  console.log('└─────────────────────────────────────────────────┘');
+  console.log('┌──────────────────────────────────────────────────────┐');
+  console.log('│   🤖  AI Affiliate Tech Blog — Local Preview          │');
+  console.log('├──────────────────────────────────────────────────────┤');
+  console.log(`│   🏠  Home:     ${base}/                       │`);
+  console.log(`│   ℹ️   About:    ${base}/about                  │`);
+  console.log(`│   📝  Reviews:  ${base}/blog                   │`);
+  console.log('│                                                        │');
+  console.log('│   Press Ctrl+C to stop the server.                    │');
+  console.log('└──────────────────────────────────────────────────────┘');
   console.log('');
 
   // Give the OS a moment, then open the browser
-  setTimeout(function () { openBrowser(homeUrl); }, 500);
+  setTimeout(function () { openBrowser(base + '/'); }, 500);
 });
 
 server.on('error', function (err) {
