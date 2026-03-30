@@ -1,0 +1,55 @@
+Write a comprehensive, SEO-optimized product review article for the following product:
+
+**Product:** {{PRODUCT}}
+**Category:** {{CATEGORY}}
+**Key Features Provided:** {{FEATURES}}
+
+## Requirements:
+
+Write a complete product review article in Markdown format that includes ALL of the following sections:
+
+### 1. Title
+A compelling, SEO-optimized H1 title (include the year).
+
+### 2. Introduction (150-200 words)
+- Hook the reader with a relatable pain point or scenario
+- Introduce the product and why it matters
+- State the review's purpose (who it's for)
+
+### 3. Product Overview (200-250 words)
+- What is this product and who makes it?
+- Target audience and use cases
+- Where it sits in the market (budget, mid-range, premium)
+- Current price range
+
+### 4. Key Specifications Table
+A Markdown table with the most important specs for this product category.
+
+### 5. Performance Analysis (400-500 words)
+At least 3 subsections covering the most important performance aspects for this category.
+Use specific ratings (e.g., "Sound Quality: 9.2/10") and detailed observations.
+
+### 6. Pros & Cons
+Honest bullet-point list of at least 5 pros and 3 cons.
+
+### 7. Who Should Buy It?
+- "Buy if:" section with 3-4 bullet points
+- "Skip if:" section with 2-3 bullet points
+- Mention 1-2 alternatives
+
+### 8. Verdict & Final Rating
+- Overall rating out of 10 with label (Outstanding/Excellent/Good/Average)
+- 2-3 paragraph final recommendation
+- Affiliate CTA: "Buy [PRODUCT] on Amazon → AFFILIATE_LINK"
+
+### 9. FAQ (3-5 questions)
+Answer the most common questions about this product.
+
+## SEO Guidelines:
+- Use the product name naturally 4-6 times
+- Include comparison keywords naturally (e.g., "vs [competitor]")
+- Use transition words and clear headings
+- Write at an 8th-grade reading level
+- Target word count: 1,200-1,800 words
+
+Write the full article now:

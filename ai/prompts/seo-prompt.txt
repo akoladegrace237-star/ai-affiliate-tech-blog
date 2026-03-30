@@ -1,0 +1,56 @@
+Perform comprehensive SEO keyword research for the following topic and return the results as valid JSON.
+
+**Topic:** {{TOPIC}}
+**Category:** {{CATEGORY}}
+**Year:** {{YEAR}}
+
+## Instructions:
+
+Analyze the topic from an SEO perspective for an affiliate marketing blog in the Tech & Gadgets niche.
+Return ONLY a valid JSON object with the following exact structure:
+
+```json
+{
+  "primaryKeyword": "the single most important keyword phrase (high volume, medium competition)",
+  "secondaryKeywords": [
+    "keyword 2 (related, medium volume)",
+    "keyword 3",
+    "keyword 4",
+    "keyword 5",
+    "keyword 6"
+  ],
+  "longTailKeywords": [
+    "longer phrase keyword with buying intent (5-8 words)",
+    "another long-tail keyword",
+    "best [topic] for [use case] [year]",
+    "another long-tail with question intent",
+    "another long-tail comparison keyword"
+  ],
+  "questionsToAnswer": [
+    "What is the best [topic] in {{YEAR}}?",
+    "How to choose [topic]?",
+    "Is [topic] worth it?",
+    "What is the difference between [topic variant A] and [topic variant B]?"
+  ],
+  "searchIntent": {
+    "informational": ["keywords for blog posts and guides"],
+    "commercial": ["keywords for review and comparison pages"],
+    "transactional": ["keywords for buying guide pages"]
+  },
+  "competitorKeywords": [
+    "keyword used by competitor sites in this niche"
+  ],
+  "suggestedTitles": [
+    "Best [Topic] in {{YEAR}}: Top 10 Picks Reviewed",
+    "[Topic A] vs [Topic B]: Which Should You Buy?",
+    "Best [Topic] Under $[Price]: Budget Buyer's Guide",
+    "How to Choose the Best [Topic]: Complete Guide",
+    "[Topic]: Everything You Need to Know Before Buying"
+  ],
+  "estimatedDifficulty": "easy | medium | hard",
+  "affiliatePotential": "low | medium | high | very high",
+  "contentRecommendation": "A brief (2-3 sentence) recommendation on what type of content to create first for maximum SEO impact."
+}
+```
+
+Return ONLY the JSON object. Do not include any explanation or text outside the JSON.

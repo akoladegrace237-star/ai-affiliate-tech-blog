@@ -1,0 +1,53 @@
+Write a detailed, SEO-optimized product comparison article for the following products:
+
+**Products to Compare:**
+{{PRODUCTS}}
+
+**Category:** {{CATEGORY}}
+**Year:** {{YEAR}}
+
+## Requirements:
+
+Write a complete product comparison article in Markdown format that includes ALL of the following sections:
+
+### 1. Title
+SEO-optimized title: "[Product A] vs [Product B]: Which Should You Buy in {{YEAR}}?"
+
+### 2. Quick Verdict (100 words)
+- State the overall winner upfront
+- Quick summary table showing each product, its price, best use case, and rating
+
+### 3. Overview (150 words)
+Brief intro explaining who this comparison is for and what criteria were used.
+
+### 4. Side-by-Side Specifications Table
+A comprehensive Markdown table comparing all key specs across all products.
+
+### 5. Detailed Comparison (600-800 words)
+Compare each of the following aspects (or the most relevant for the category):
+- **Performance** (the primary function of the product)
+- **Design & Build Quality**
+- **Battery Life / Endurance** (if applicable)
+- **Value for Money**
+- For each aspect, state a clear winner with reasoning.
+
+### 6. Category Scorecard Table
+A table showing each product's score (out of 10) for each category and the overall winner.
+
+### 7. Who Should Buy Which?
+- "Buy [Product A] if..." — 3 bullet points
+- "Buy [Product B] if..." — 3 bullet points
+- (Add for Product C if applicable)
+
+### 8. Verdict & Recommendation
+- Overall winner declared with clear reasoning
+- 2-3 paragraph justification
+- Affiliate CTAs for each product: "Buy [Product] on Amazon → AFFILIATE_LINK_[1/2/3]"
+
+## SEO Guidelines:
+- Include the word "vs" and "comparison" naturally
+- Use the year in headings where natural
+- Mention alternative products for broader reach
+- Target word count: 1,500-2,000 words
+
+Write the full comparison article now:
