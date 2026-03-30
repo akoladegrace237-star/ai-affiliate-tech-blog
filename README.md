@@ -81,15 +81,38 @@ cp .env.example .env
 
 **You can see the full website on your computer before publishing it online — no hosting needed!**
 
+### Option A — Open HTML directly (simplest, no commands needed)
+
+Just open **`src/pages/index.html`** in your browser:
+
+- **Windows:** double-click `src\pages\index.html` in File Explorer
+- **Mac:** right-click → _Open With_ → your browser
+- **Any OS:** drag `src/pages/index.html` onto an open browser window
+
+All pages, styles, and images load correctly because every link uses relative paths.
+
+### Option B — Run the local preview server (recommended)
+
+Requires [Node.js v18+](https://nodejs.org/).
+
 ```bash
 npm start
 ```
 
-That's it. Your browser will open automatically to **http://localhost:3000** and you'll see the live site.
+The terminal will print a URL — paste it into your browser:
 
-You can visit any page using short, easy-to-type URLs:
+```
+----------------------------------------------------------
+  AI Affiliate Tech Blog -- Local Preview
+----------------------------------------------------------
+  >> Open this URL in your browser:
+     http://localhost:3000/
+----------------------------------------------------------
+```
 
-| Page | Short URL | 
+If port 3000 is already taken the server automatically picks the next free port (3001, 3002, …).
+
+| Page | URL |
 |---|---|
 | 🏠 Homepage | http://localhost:3000/ |
 | ℹ️ About | http://localhost:3000/about |
@@ -97,7 +120,7 @@ You can visit any page using short, easy-to-type URLs:
 
 > **Press `Ctrl + C`** in your terminal to stop the preview server when you're done.
 
-You can also use a custom port if 3000 is already taken:
+You can also force a specific port:
 
 ```bash
 PORT=8080 npm start

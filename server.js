@@ -21,7 +21,7 @@ const { execSync } = require('child_process');
 // -----------------------------------------------------------------------
 // Configuration
 // -----------------------------------------------------------------------
-const PORT = process.env.PORT || 3000;
+const PREFERRED_PORT = parseInt(process.env.PORT || '3000', 10);
 const ROOT = __dirname; // Project root — serves every file from here
 
 // MIME type map
@@ -133,35 +133,50 @@ function openBrowser(url) {
 }
 
 // -----------------------------------------------------------------------
-// Start the server
+// Start the server — automatically find a free port
 // -----------------------------------------------------------------------
 const server = http.createServer(requestHandler);
 
-server.listen(PORT, '0.0.0.0', function () {
-  const base = `http://localhost:${PORT}`;
+function tryListen(port, maxPort) {
+  server.listen(port, '0.0.0.0', function () {
+    const base = `http://localhost:${port}`;
+    const line = '-'.repeat(58);
 
-  console.log('');
-  console.log('┌──────────────────────────────────────────────────────┐');
-  console.log('│   🤖  AI Affiliate Tech Blog — Local Preview          │');
-  console.log('├──────────────────────────────────────────────────────┤');
-  console.log(`│   🏠  Home:     ${base}/                       │`);
-  console.log(`│   ℹ️   About:    ${base}/about                  │`);
-  console.log(`│   📝  Reviews:  ${base}/blog                   │`);
-  console.log('│                                                        │');
-  console.log('│   Press Ctrl+C to stop the server.                    │');
-  console.log('└──────────────────────────────────────────────────────┘');
-  console.log('');
+    console.log('');
+    console.log(line);
+    console.log('  AI Affiliate Tech Blog -- Local Preview');
+    console.log(line);
+    console.log('  >> Open this URL in your browser:');
+    console.log(`     ${base}/`);
+    console.log(line);
+    console.log(`  Home:     ${base}/`);
+    console.log(`  About:    ${base}/about`);
+    console.log(`  Reviews:  ${base}/blog`);
+    console.log('');
+    console.log('  Press Ctrl+C to stop the server.');
+    console.log(line);
+    console.log('');
 
-  // Give the OS a moment, then open the browser
-  setTimeout(function () { openBrowser(base + '/'); }, 500);
-});
+    // Give the OS a moment, then open the browser
+    setTimeout(function () { openBrowser(base + '/'); }, 500);
+  });
 
-server.on('error', function (err) {
-  if (err.code === 'EADDRINUSE') {
-    console.error(`\n❌  Port ${PORT} is already in use.`);
-    console.error(`   Try a different port: PORT=3001 npm start\n`);
-  } else {
-    console.error('\n❌  Server error:', err.message);
-  }
-  process.exit(1);
-});
+  server.once('error', function (err) {
+    if (err.code === 'EADDRINUSE') {
+      if (port < maxPort) {
+        console.warn(`   ⚠️  Port ${port} is busy — trying port ${port + 1}…`);
+        server.close();
+        tryListen(port + 1, maxPort);
+      } else {
+        console.error(`\n❌  Could not find a free port between ${PREFERRED_PORT} and ${maxPort}.`);
+        console.error(`   Stop the program using one of those ports, then run: npm start\n`);
+        process.exit(1);
+      }
+    } else {
+      console.error('\n❌  Server error:', err.message);
+      process.exit(1);
+    }
+  });
+}
+
+tryListen(PREFERRED_PORT, PREFERRED_PORT + 9);
